@@ -11,10 +11,12 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- autocommand that reloads neovim and installs/updates/removes plugin
+-- when file is saved
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -25,8 +27,12 @@ end
 
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
-	use("navarasu/onedark.nvim") -- preferred colorscheme
+	use("navarasu/onedark.nvim")
 	use("ellisonleao/gruvbox.nvim")
+	use("tanvirtin/monokai.nvim")
+	use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
+	use("EdenEast/nightfox.nvim")
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "*",
@@ -108,6 +114,17 @@ return packer.startup(function(use)
 	-- git signs plugin
 	use("lewis6991/gitsigns.nvim")
 
+	-- tabline
+	use("romgrk/barbar.nvim")
+
+	-- for tag, ifErr and generate tests
+	use({
+		"olexsmir/gopher.nvim",
+		requires = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	})
 	if packer_bootstrap then
 		require("packer").sync()
 	end
