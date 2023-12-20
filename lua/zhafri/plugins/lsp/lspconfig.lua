@@ -127,3 +127,4 @@ lspconfig["gopls"].setup({
 })
 
 lspconfig["intelephense"].setup({})
+lspconfig["terraformls"].setup({})

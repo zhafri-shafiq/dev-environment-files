@@ -115,7 +115,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 
 	-- tabline
-	use("romgrk/barbar.nvim")
+	-- use("romgrk/barbar.nvim")
 
 	-- for tag, ifErr and generate tests
 	use({
@@ -125,6 +125,8 @@ return packer.startup(function(use)
 			"nvim-treesitter/nvim-treesitter",
 		},
 	})
+
+	use("wakatime/vim-wakatime")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

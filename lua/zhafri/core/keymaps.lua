@@ -74,3 +74,20 @@ keymap.set("n", "<leader>b8", "<cmd>BufferGoto 8<cr>")
 keymap.set("n", "<leader>b9", "<cmd>BufferGoto 9<cr>")
 keymap.set("n", "<leader>b0", "<cmd>BufferLast<cr>")
 keymap.set("n", "<leader>bcac", "<cmd>BufferCloseAllButCurrent<cr>")
+keymap.set("n", "<leader>bcr", "<cmd>BufferCloseBuffersRight<cr>")
+keymap.set("n", "<leader>bcl", "<cmd>BufferCloseBuffersLeft<cr>")
+keymap.set("n", "<leader>bcaa", "<cmd>BufferCloseAll<cr>")
+
+-- keymap.set(
+-- 	"v",
+-- 	"<leader>64d",
+-- 	"<cmd>silent! s@\\%V.*\\%V@\\=system('echo \"' .. escape(submatch(0), '\"') .. '\" | base64 -d')<cr>"
+-- )
+-- keymap.set(
+-- 	"v",
+-- 	"<leader>64e",
+-- 	"<cmd>silent! s@\\%V.*\\%V@\\=system('echo \"' .. escape(submatch(0), '\"') .. '\" | base64')<cr>"
+-- )
+
+keymap.set("n", "<leader>64d", "<cmd>%!base64 -d<cr>")
+keymap.set("n", "<leader>64e", "<cmd>%!base64<cr>")
