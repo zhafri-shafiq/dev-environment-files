@@ -1,16 +1,16 @@
-local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
+local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
 if not status then
-    print("Colorscheme not found!")
-    return
+	print("Colorscheme not found!")
+	return
 end
 
-local tn_status, tokyonight = pcall(require, 'tokyonight')
+local tn_status, kanagawa = pcall(require, "tokyonight")
 if not tn_status then
-    return
+	return
 end
 
-tokyonight.setup({
-    style = "moon"
+kanagawa.setup({
+	style = "moon",
 })
 
 vim.o.background = "dark"
